@@ -1,6 +1,23 @@
 {
+  "name": "refactoring-study",
+  "version": "1.0.0",
+  "description": "Refactoring 2nd study code",
+  "private": false,
+  "keywords": [
+    "refactoring",
+    "javascript"
+  ],
+  "license": "MIT",
+  "author": "Schemr, Jin-2, MWC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/schemr/refactoring-study"
+  },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:schemr": "jest test/schemr",
+    "test:jin-2": "jest test/jin-2",
+    "test:mwc": "jest test/mwc"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
