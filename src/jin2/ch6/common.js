@@ -9,11 +9,27 @@ export function acquireMember() {
   return member;
 }
 
-class Member {
+export class Member {
   constructor(data) {
     this._name = data.name;
     this._annualSalary = data.annualSalary;
     this._workingTime = data.workingTime;
     this._vacation = data.vacation;
   }
+  get name() {return this._name;}
+  get annualSalary() {return this._annualSalary;}
+  get workingTime() {return this._workingTime;}
+  get vacation() {return this._vacation;}
+
+  get basicWage() {
+    return Math.floor(
+      (this.annualSalary / 12 / 209) * this.workingTime
+    );
+  }
+
+  get buns() {
+    return this.basicWage * this.vacation;
+  }
 }
+
+export const mMember = new Member(member);
