@@ -29,7 +29,7 @@ export class Member {
   get vacation() {
     return this._vacation;
   }
-  get calculatebasicWageAmount() {
+  get basicWage() {
     return Math.floor((this.annual_salary / 12 / 209) * this.workingTime);
   }
 }
