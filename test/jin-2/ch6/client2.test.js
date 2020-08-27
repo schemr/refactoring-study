@@ -1,4 +1,4 @@
-import { basicWage, bonus } from "../../../src/jin-2/ch6/client2";
+import { basicWage, bonus } from "../../../src/jin2/ch6/client2";
 
 describe("Client 2 통상임금, 연차수당", () => {
   test("통상임금", () => {
