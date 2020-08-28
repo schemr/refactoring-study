@@ -1,3 +1,6 @@
+const MONTHS_WORKING_TIME = 209;
+const MONTHS_NUMBER = 12;
+
 const member = {
   name: "홍길동",
   annual_salary: 30000000,
@@ -9,37 +12,27 @@ export function acquireMember() {
   return member;
 }
 
-const MONTH_WORKING_TIME = 209;
-const MONTH_NUMBER = 12;
 export class Worker {
-  consturctor(data){
-    this.name = data.named;
+  constructor(data){
+    this.name = data.name;
     this.annual_salary = data.annual_salary;
     this.workingTime = data.workingTime;
     this.vacation = data.vacation;
   }
 
-  get name(){
-    return this.name;
+  calculateBasicWage(){
+    return Math.floor((this.annual_salary / MONTHS_NUMBER / MONTHS_WORKING_TIME) * this.workingTime);
   }
 
-  get annual_salary(){
-    return this.annual_salary;
-  }
-
-  get workingTime(){
-    return this.workingTime;
-  }
-
-  get vacation(){
-    return this.vacation;
+  calculateBonus(){
+    return this.basicWage * this.vacation;
   }
 
   get basicWage(){
-    return this.basicWage();
+    return this.calculateBasicWage();
   }
 
-  basicWage(){
-    return (annual_salary / MONTH_NUMBER / MONTH_WORKING_TIME) * this.workingTime;
+  get bonusAmount(){
+    return this.calculateBonus();
   }
 }

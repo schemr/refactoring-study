@@ -1,8 +1,7 @@
-import { acquireMember } from "./common";
+import { acquireMember, Worker } from "./common";
 // 클라이언트 3
 // 통상 임금 계산 함수
 const aMember = acquireMember();
-export const basicWageAmount = calculatebasicWageAmount(aMember);
-function calculatebasicWageAmount(aMember) {
-  return Math.floor((aMember.annual_salary / 12 / 209) * aMember.workingTime);
-}
+const aWorker = new Worker(aMember);
+
+export const basicWage = aWorker.basicWage;
