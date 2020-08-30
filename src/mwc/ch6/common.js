@@ -12,8 +12,12 @@ export function acquireMember() {
 export class Member {
   constructor(data) {
     this._customer = data.customer;
-    this._quantity = data.annual_salary;
+    this._annual_salary = data.annual_salary;
     this._workingTime = data.workingTime;
     this._vacation = data.vacation;
+  }
+
+  get basicWageAmount() {
+    return Math.floor((this._annual_salary / 12 / 209) * this._workingTime);
   }
 };
