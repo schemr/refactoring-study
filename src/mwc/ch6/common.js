@@ -8,3 +8,12 @@ const member = {
 export function acquireMember() {
   return member;
 }
+
+export class Member {
+  constructor(data) {
+    this._customer = data.customer;
+    this._quantity = data.annual_salary;
+    this._workingTime = data.workingTime;
+    this._vacation = data.vacation;
+  }
+};
