@@ -5,4 +5,4 @@ import { acquireMember, Member } from "./common";
 const aMember = acquireMember();
 const aWorker = new Member(aMember);
 export const basicWage = aWorker.basicWageAmount;
-export const bonus = basicWage * aMember.vacation;
+export const bonus = aWorker.bonusAmount;

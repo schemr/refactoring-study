@@ -20,4 +20,8 @@ export class Member {
   get basicWageAmount() {
     return Math.floor((this._annual_salary / 12 / 209) * this._workingTime);
   }
+
+  get bonusAmount() {
+    return this.basicWageAmount * this._vacation;
+  }
 };
